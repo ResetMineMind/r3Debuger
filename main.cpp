@@ -565,7 +565,6 @@ void EnterDebugLoop(PUserCommand command, const LPDEBUG_EVENT DebugEv)
 				}
 				else {
 					// 主动触发单步执行，进入异常自动修复断点，保证下次再次触发内存断点
-					// 但这将导致，run命令一直无法执行成功
 					command->type = STEPINM;
 					command->u1.addr = 1;
 					DoCommand(command, DebugEv);
